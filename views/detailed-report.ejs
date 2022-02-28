@@ -103,7 +103,7 @@
         <h5>Temporary Count <%= TempCount %> </h5>
         <h5>Permanent Count <%= PerCount %> </h5>
         <h5>Level & Temperature <%= LevelTemp %> </h5>
-        <% if(status==='true' ) { %>
+        <% if(TempCount==25 && PerCount==25  ) { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#A8F72E">Pass</h5></div>
         <% } else { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
