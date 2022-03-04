@@ -24,7 +24,8 @@
 					<th>Status</th>
 				</tr>
 
-				<% allReports.forEach((element, index)=> { %>
+				<% 
+				allReports.forEach((element, index)=> { %>
 					<tr>
 						<td>
 							<%= index+1 %>
@@ -41,7 +42,7 @@
 
 						<% if(element.status) { %>
 							<td>
-								<p style="color:#A8F72E">Pass</p>
+								<p ><a style="color:#A8F72E" href="/detailed-report/<%=element._id%>">Pass</a> </p>
 							</td>
 							<% } else { %>
 								<td>
