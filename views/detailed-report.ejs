@@ -44,7 +44,8 @@
 
                 </tr>
 
-                <% cycles.forEach(function(data,index) { %>
+                <% console.log(cycles[0])
+                     cycles.forEach(function(data,index) { %>
                     <tr>
                         <!-- <td>
                             <%= index+1 %>
@@ -105,7 +106,7 @@
         <% var t=LevelTemp.match(/\d/g).join("").substr(0,2);  %>
         <% var l=LevelTemp.match(/\d/g).join("").substr(2,4);  %>
         <h5>Level & Temperature T:<%=t  %> L:<%=l  %> </h5>
-        <% if(TempCount==000025 && PerCount==000025  ) { %>
+        <% if(TempCount.match(/\d/g).join("")=="000025" && PerCount.match(/\d/g).join("")=="000025"  ) { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#A8F72E">Pass</h5></div>
         <% } else { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
