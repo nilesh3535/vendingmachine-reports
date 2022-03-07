@@ -113,9 +113,9 @@
         <% 
         
         
-        if(wftime > 150 || wftime!=="00000"){  %>
+        if(parseInt(wftime) > 150 || parseInt(wftime)!==0000){  %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
-            <% }else if(whtime > 300 || whtime!=="0000"){  %>
+            <% }else if(parseInt(whtime) > 300 || parseInt(whtime)!==0000){  %>
                 <div class='d-flex'><h5>Water Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
                 <% }else if(TempCount.match(/\d/g).join("")=="000025" && PerCount.match(/\d/g).join("")=="000025"  ) { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:green">Pass</h5></div>
