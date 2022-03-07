@@ -21,9 +21,13 @@
         <h5>Level00: <%= Level00 %> </h5>
         <h5>Level01: <%= Level01 %> </h5>
         <h5>Level11: <%= Level11 %> </h5>
-
-        <h5>Water Filling Time: <%= WaterFillingTime %></h5>
-        <h5>Water Heating Time: <%= WaterHeatingTime %></h5>
+        <% 
+        var wftime=WaterFillingTime
+        var whtime=WaterHeatingTime
+        %>
+        <h5>Water Filling Time: <%= WaterFillingTime %> sec.</h5>
+      
+        <h5>Water Heating Time: <%= WaterHeatingTime %> sec.</h5>
         <div class="table-wrapper-scroll-x my-custom-scrollbar">
             <table border="1" class="table table-dark table-hover table-data" cellspacing="0" width="100%">
                 <tr>
@@ -106,7 +110,14 @@
         <% var t=LevelTemp.match(/\d/g).join("").substr(0,2);  %>
         <% var l=LevelTemp.match(/\d/g).join("").substr(2,4);  %>
         <h5>Level & Temperature T:<%=t  %> L:<%=l  %> </h5>
-        <% if(TempCount.match(/\d/g).join("")=="000025" && PerCount.match(/\d/g).join("")=="000025"  ) { %>
+        <% 
+        
+        
+        if(wftime > 150 || wftime!=="00000"){  %>
+            <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
+            <% }else if(whtime > 300 || whtime!=="0000"){  %>
+                <div class='d-flex'><h5>Water Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
+                <% }else if(TempCount.match(/\d/g).join("")=="000025" && PerCount.match(/\d/g).join("")=="000025"  ) { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:green">Pass</h5></div>
         <% } else { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
