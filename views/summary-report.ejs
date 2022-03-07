@@ -17,7 +17,7 @@
 			<table border="1" class="table table-dark table-hover table-sm table-bordered table-responsive table-data">
 
 				<tr>
-					<th>Sr</th>
+					<th class="text-center">Sr</th>
 					<th>Time</th>
 					<th>Date</th>
 					<th>Product Number</th>
@@ -27,7 +27,7 @@
 				<% 
 				allReports.forEach((element, index)=> { %>
 					<tr>
-						<td>
+						<td class="text-center">
 							<%= index+1 %>
 						</td>
 						<td>
@@ -42,11 +42,11 @@
 
 						<% if(element.status) { %>
 							<td>
-								<p ><a style="color:#A8F72E" href="/detailed-report/<%=element._id%>">Pass</a> </p>
+								<p ><a style="color:#A8F72E" href="/detailed-report/<%=element._id%>">Pass</a><i class="fa fa-check" aria-hidden="true" style="color:#A8F72E"></i> </p>
 							</td>
 							<% } else { %>
 								<td>
-									<p><a style="color:#FF3C00" href="/detailed-report/<%=element._id%>">Fail</a> </p>
+									<p><a style="color:#FF3C00" href="/detailed-report/<%=element._id%>">Fail</a> <i class="fa fa-close" aria-hidden="true" style="color:red"></i></p>
 								</td>
 								<% } %>
 					</tr>	
