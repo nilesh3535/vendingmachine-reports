@@ -21,10 +21,7 @@
         <h5>Level00: <%= Level00 %> </h5>
         <h5>Level01: <%= Level01 %> </h5>
         <h5>Level11: <%= Level11 %> </h5>
-        <% 
-        var wftime=WaterFillingTime
-        var whtime=WaterHeatingTime
-        %>
+       
         <h5>Water Filling Time: <%= WaterFillingTime %> sec.</h5>
       
         <h5>Water Heating Time: <%= WaterHeatingTime %> sec.</h5>
@@ -113,9 +110,9 @@
         <% 
         
         
-        if(parseInt(wftime) > 150 || parseInt(wftime)!==0000){  %>
+        if(parseInt(WaterFillingTime) > 150 || WaterFillingTime=="0000"){  %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
-            <% }else if(parseInt(whtime) > 300 || parseInt(whtime)!==0000){  %>
+            <% }else if(parseInt(WaterHeatingTime) > 300 || WaterHeatingTime=="0000"){  %>
                 <div class='d-flex'><h5>Water Results: &nbsp;</h5><h5 style="color:#FF3C00">Fail</h5></div>
                 <% }else if(TempCount.match(/\d/g).join("")=="000025" && PerCount.match(/\d/g).join("")=="000025"  ) { %>
             <div class='d-flex'><h5>Machine Test Results: &nbsp;</h5><h5 style="color:green">Pass</h5></div>
